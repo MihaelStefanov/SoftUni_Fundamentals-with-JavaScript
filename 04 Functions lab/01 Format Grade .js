@@ -1,27 +1,37 @@
-function formatGrade(grade) {
+function printHeader(inputGrade) {
+    let grade = Number(inputGrade);
 
     if (grade < 3) {
         console.log(`Fail (2)`);
-
-    } else if (grade < 3.50) {
-        console.log(`Poor (${grade.toFixed(2)})`)
-
-    } else if (grade < 4.50) {
-        console.log(`Good (${grade.toFixed(2)})`);
-
-    } else if (grade < 5.50) {
-        console.log(`Very good (${grade.toFixed(2)})`);
-
     } else {
-        console.log(`Excellent (${grade.toFixed(2)})`);
-        
+        let label = formatGrade(grade);
+        console.log(`${label} (${grade.toFixed(2)})`);
     }
 
 }
 
-formatGrade(2.99);
-formatGrade(3);
-formatGrade(3.50);
-formatGrade(4.50);
-formatGrade(5);
-formatGrade(6);
+function formatGrade(grade) {
+
+    if (grade < 3.50) {
+        return `Poor`;
+
+    } else if (grade < 4.50) {
+        return `Good`;
+
+    } else if (grade < 5.50) {
+        return `Very good`;
+
+    } else {
+        return `Excellent`;
+    }
+
+}
+
+
+printHeader(2.99)
+printHeader(2.99);
+printHeader(3);
+printHeader(3.50);
+printHeader(4.50);
+printHeader(5);
+printHeader(6);
