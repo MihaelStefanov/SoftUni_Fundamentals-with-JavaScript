@@ -14,7 +14,6 @@ function thirdPlace(place) {
     console.log('~~~-== {🥉} ==-~~~');
     console.log('~~🍾 BRONZE CUP 🍾~~');
     console.log(`~~~-=  ${place}rd.  =-~~~`);
-
 }
 
 function podium(place) {
