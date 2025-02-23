@@ -4,7 +4,7 @@ function solve(num1, num2, name, age) {
         console.log(a + b);   
     }
 
-    sum(5, 3);
+    sum(num1, num2);
 
 }
 solve(5, 10, 'Pesho', 23)
