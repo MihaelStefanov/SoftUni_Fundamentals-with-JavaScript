@@ -6,12 +6,6 @@ function solve(num1, num2, name, age) {
 
     sum(5, 3);
 
-
-    
-
-    
-
-
 }
 solve(5, 10, 'Pesho', 23)
 
