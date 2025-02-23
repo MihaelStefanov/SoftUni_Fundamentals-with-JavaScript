@@ -1,19 +1,20 @@
 function firstPlace(place) {
-    console.log('~~~-== {🏆} ==-~~~');
+    console.log('~~~🎇-= {🏆} =-🎇~~');
     console.log('~~🍾 GOLD CUP 🍾-~~');
     console.log(`~~~-=  ${place}st.  =-~~~`);
 }
 
 function secondPlace(place) {
-    console.log('~~~-== {🥈} ==-~~~');
+    console.log('~~~-🎇= {🥈} =🎇-~~~');
     console.log('~~🍾 SILVER CUP 🍾~~');
     console.log(`~~~-=  ${place}nd.  =-~~~`);
 }
 
 function thirdPlace(place) {
-    console.log('~~~-== {🥉} ==-~~~');
+    console.log('~~~-🎇= {🥉} =🎇-~~~');
     console.log('~~🍾 BRONZE CUP 🍾~~');
     console.log(`~~~-=  ${place}rd.  =-~~~`);
+
 }
 
 function podium(place) {
