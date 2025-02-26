@@ -2,8 +2,8 @@ function solve(inputNum) {
     let evenSum = 0;
     let oddSum = 0;
 
-    for (const curEl of inputNum.toString().split('')) {
-        let curNum = Number(curEl);
+    for (let curNum of inputNum.toString().split('')) {
+        curNum = Number(curNum);
 
         (curNum % 2 == 0) ? evenSum += curNum : oddSum += curNum;
     }
