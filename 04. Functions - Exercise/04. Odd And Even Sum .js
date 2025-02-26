@@ -1,4 +1,5 @@
 function solve(inputNum) {
+    
     let evenSum = 0;
     let oddSum = 0;
 
@@ -18,3 +19,4 @@ function solve(inputNum) {
 
 
 console.log(solve(1000435));
+console.log(solve(3495892137259234));
