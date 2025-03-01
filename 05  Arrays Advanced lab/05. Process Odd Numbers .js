@@ -22,8 +22,9 @@ function solve2(arr) {
     let oddIdxNumsByTwoReversArr = arr.filter((num, idx) => idx % 2 !== 0)
         .map(a => a * 2)
         .reverse()
+        .join(' ')
 
-    return oddIdxNumsByTwoReversArr.join(' ');
+    return oddIdxNumsByTwoReversArr;
 
 }
 
