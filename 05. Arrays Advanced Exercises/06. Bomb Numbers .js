@@ -21,7 +21,6 @@ function solve(inputArr, bombInfo) {
 
     return sum;
 
-
 }
 
 
