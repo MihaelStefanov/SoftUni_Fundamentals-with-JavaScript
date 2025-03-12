@@ -16,6 +16,7 @@ function solve(inputArr) {
             if (neighborhoodArr.length - valentineDaysCheck.length > 0) {
                 result.push(`Cupid's last position was ${lastPlaceIdx}.`);
                 result.push(`Cupid has failed ${neighborhoodArr.length - valentineDaysCheck.length} places.`);
+                
             } else {
                 result.push('Mission was successful.');
 
@@ -41,10 +42,8 @@ function solve(inputArr) {
 
 
                 if (valentineDaysCheck.includes(newJumpIdx)) {
-
-
                     result.push(`Place ${newJumpIdx} already had Valentine's day.`)
-                    // console.log(`Place ${newJumpIdx} already had Valentine's day.`);
+                   
                 } else {
                     result.push(`Place ${newJumpIdx} has Valentine's day.`);
                     valentineDaysCheck.push(newJumpIdx);
