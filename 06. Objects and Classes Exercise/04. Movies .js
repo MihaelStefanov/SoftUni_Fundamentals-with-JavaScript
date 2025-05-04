@@ -26,13 +26,12 @@ function solve(inputArr) {
         
     });
 
-    for (let movie of moviesArr) {
+    moviesArr.forEach(movie => {
         if (movie.name && movie.director && movie.date) {
-        let movieAsString = JSON.stringify(movie);
-        console.log(movieAsString);
+        console.log(JSON.stringify(movie));
         }
-    }
-
+    });
+    
 }
 
 
