@@ -25,7 +25,7 @@ function solve(inputArr) {
     }
 
 }
-
+// 80/100 in Judge.
 
 solve([
     '{"Coffee":"A hot drink made from the roasted and ground seeds (coffee beans) of a tropical shrub."}',
