@@ -17,7 +17,6 @@ function solve(inputArr) {
         
     }
 
-
     if (parkingArr.length > 0) {
          parkingArr.sort((a, b) => Number(a.slice(2, -2)) - Number(b.slice(2, -2))).forEach(element => {
             console.log(element);
