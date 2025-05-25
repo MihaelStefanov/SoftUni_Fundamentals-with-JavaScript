@@ -22,13 +22,13 @@ function solve(input) {
     sortedArr = Object.entries(myObj).filter(entry => entry[1] % 2 !== 0).sort((a, b) => b[1] - a[1]);
 
 
-    let ressult = ''
+    let result = ''
 
     sortedArr.forEach(entry => {
-        ressult += `${entry[0]} `;
+        result += `${entry[0]} `;
     });
 
-    console.log(ressult);
+    console.log(result);
     
 }
 
