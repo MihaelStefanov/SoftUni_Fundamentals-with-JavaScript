@@ -1,6 +1,5 @@
 function solve(word, sentence) {
     sentence = sentence.toLowerCase().split(' ');
-    
 
     if (sentence.includes(word)) {
         console.log(word);
