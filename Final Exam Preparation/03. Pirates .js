@@ -1,10 +1,8 @@
 function solve(inputArr) {
     let target = [];
-    let secondHalfInputIdx;
 
-    let line = inputArr.shift();
+    let line = inputArr.shift();    
     while (line !== "Sail") {        
-
         let [town, population, gold] = line.split('||');
         population = +population;
         gold = +gold;
@@ -19,61 +17,67 @@ function solve(inputArr) {
             }
             target.push(newTown)
         } else {
-            currentTown.people += population;
+            currentTown.population += population;
             currentTown.gold += gold;
         }
-       line = inputArr.shift()
-    }
+       line = inputArr.shift();
+    }        
 
     line = inputArr.shift();
     while (line !== "End") {
-        console.log(line);
-        let token = inputArr[secondHalfInputIdx].split('=>');
+        let token = line.split('=>');
         let event = token[0];
-        let town;
+        let town = token[1];
         let population;
         let gold;
         let currentTownIndex;
 
-        let currentTown = target.find((x, i) => {
-                    if (x.town == town) {
-                        currentTownIndex = i;
-                        return true;                        
-                    }
-                    return false;
-                });
-
+        let currentTown = target.find(x => x.town == town);
+        currentTownIndex = target.indexOf(currentTown);
+        
+        if (!currentTown) {
+            break;
+        }
+                
         switch (event) {
             case 'Plunder':
-                if (!currentTown) {
-                    break;
-                }
-                town = token[1];
                 population = Number(token[2]);
-                gold = Number(token[3]);  
+                gold = Number(token[3]);              
                 
                 currentTown.population -= population;
                 currentTown.gold -= gold;
+
+                console.log(`${town} plundered! ${gold} gold stolen, ${population} citizens killed.`);
+                
                 if (currentTown.population <= 0 || currentTown.gold <= 0) {
                     target.splice(currentTownIndex, 1);
+                    console.log(`${town} has been wiped off the map!`);
+                    
                 }
                 break;
-                // case 'Prosper':
-                //     town = Number(token[1]);
-                //     gold = Number(token[2]);
 
-
-                //     break;
+                case 'Prosper':
+                    gold = Number(token[2]);
+                    
+                    if (gold < 0) {
+                        console.log(`Gold added cannot be a negative number!`);
+                    } else {
+                        currentTown.gold += gold;
+                        console.log(`${gold} gold added to the city treasury. ${town} now has ${currentTown.gold} gold.`);
+                    }
+                    break;
             }
-
             
         line = inputArr.shift();
         }
-        
-    console.table(target);
-    
-    
+
+
+    console.log(`Ahoy, Captain! There are ${target.length} wealthy settlements to go to:`);
+    target.forEach(town => console.log(`${town.town} -> Population: ${town.population} citizens, Gold: ${town.gold} kg`));
+
+
 }
+
 
 solve(["Tortuga||345000||1250", 
 "Santo Domingo||240000||630", 
@@ -82,3 +86,17 @@ solve(["Tortuga||345000||1250",
 "Plunder=>Tortuga=>75000=>380", 
 "Prosper=>Santo Domingo=>180", 
 "End"]);
+
+console.log('-------------');
+
+solve((["Nassau||95000||1000", 
+"San Juan||930000||1250", 
+"Campeche||270000||690", 
+"Port Royal||320000||1000", 
+"Port Royal||100000||2000", 
+"Sail", 
+"Prosper=>Port Royal=>-200", 
+"Plunder=>Nassau=>94000=>750", 
+"Plunder=>Nassau=>1000=>150", 
+"Plunder=>Campeche=>150000=>690", 
+"End"]));
