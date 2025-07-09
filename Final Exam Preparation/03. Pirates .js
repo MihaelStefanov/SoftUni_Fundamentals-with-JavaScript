@@ -71,10 +71,8 @@ function solve(inputArr) {
         line = inputArr.shift();
         }
 
-
     console.log(`Ahoy, Captain! There are ${target.length} wealthy settlements to go to:`);
     target.forEach(town => console.log(`${town.town} -> Population: ${town.population} citizens, Gold: ${town.gold} kg`));
-
 
 }
 
